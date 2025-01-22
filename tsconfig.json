@@ -1,0 +1,43 @@
+{
+    "compilerOptions": {
+        "module": "NodeNext",
+        // "moduleResolution": "Node",
+        "moduleResolution": "NodeNext",
+        "target": "ESNext",
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
+        "useDefineForClassFields": true,
+        "strict": false,
+        // "jsx": "preserve",
+        "incremental": true,
+        // "tsBuildInfoFile": ".tsbuildinfo",
+        "importHelpers": true,
+        "isolatedModules": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "skipLibCheck": true,
+        "allowSyntheticDefaultImports": true,
+        "allowJs": true,
+        "checkJs": true,
+        "noImplicitAny": false,
+        "noEmit": true,
+        "noUnusedLocals": true,
+        "sourceMap": false,
+        "removeComments": true,
+        "forceConsistentCasingInFileNames": true,
+        // "preserveSymlinks": true,
+        "baseUrl": "./",
+        "rootDir": "./",
+        "paths": {
+        },
+        "types": ["node"],
+        "lib": [
+            "ESNext",
+            // "DOM",
+            "WebWorker",
+            "ScriptHost"
+        ]
+    },
+    "include": [],
+    "exclude": ["node_modules", "dist", "./tmp", "./logs"]
+}
