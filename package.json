@@ -1,6 +1,6 @@
 {
     "name": "promise-all-pool",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "A tool to run promises concurrently just like Promise.all and has an additional pool limit",
     "author": "kk4201@126.com",
     "type": "module",
@@ -14,10 +14,10 @@
         "build": "rimraf tsconfig.tsbuildinfo && rimraf dist && tsc --build tsconfig.json"
     },
     "keywords": [
-        "promise",
-        "promise all",
-        "promise pool",
-        "promise limit"
+        "promise-all-pool",
+        "promise-all",
+        "promise-pool",
+        "promise all limit"
     ],
     "license": "ISC",
     "dependencies": {},

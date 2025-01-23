@@ -1,6 +1,6 @@
 # Description
 
-A tool to run promises concurrently just like Promise.all and has an additional pool limit
+A tool to run promises concurrently like Promise.all but has an additional pool limit
 
 # How to use
 
@@ -8,8 +8,9 @@ A tool to run promises concurrently just like Promise.all and has an additional 
 import { promiseAllPool } from 'promise-all-pool'
 
 async function main() {
-    const promises = [Promise function 1, Promise function 2, ...]
-    const result = await promisePool(promises, 8)
+    const promises = [1, 2, 3, 4, 5].map((it) => () => Promise.resolve(it));
+    const result = await promiseAllPool(promises, 2);
+    console.log('result', result);
 }
 ```
 
