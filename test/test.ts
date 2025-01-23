@@ -1,13 +1,13 @@
-import { promisePool } from '../src';
+import { promiseAllPool } from '../src';
 
 async function testFulfill(pool = 10, length = 100) {
-    console.log('should promisePool fulfill');
+    console.log('should promises fulfill');
     let timeValue = 0;
     const execList: number[] = [];
     const arr = Array.from({ length })
         .fill(null)
         .map(
-            (v, i) => () =>
+            (v, i) => (): Promise<string> =>
                 new Promise((resolve, reject) => {
                     const delay = Math.random();
                     timeValue += delay;
@@ -19,7 +19,7 @@ async function testFulfill(pool = 10, length = 100) {
                 })
         );
     console.time('time');
-    const result = await promisePool(arr, pool);
+    const result = await promiseAllPool(arr, pool);
     console.log('execList', execList);
     console.log('res', result);
     console.timeEnd('time');
@@ -27,7 +27,7 @@ async function testFulfill(pool = 10, length = 100) {
 }
 
 async function testReject(pool = 10, length = 100) {
-    console.log('should promisePool reject');
+    console.log('should promises reject');
     let timeValue = 0;
     const execList: number[] = [];
     const arr = Array.from({ length })
@@ -38,7 +38,6 @@ async function testReject(pool = 10, length = 100) {
                     const delay = Math.random();
                     timeValue += delay;
                     setTimeout(() => {
-                        console.log('func', i);
                         execList.push(i);
                         reject('rejected');
                     }, delay * 1000);
@@ -47,7 +46,7 @@ async function testReject(pool = 10, length = 100) {
                     return i.toString().padEnd(4) + error;
                 })
         );
-    const result = await promisePool(arr, pool);
+    const result = await promiseAllPool(arr, pool);
     console.log('execList', execList);
     console.log('res', result);
 }

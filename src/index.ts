@@ -1,6 +1,5 @@
-
-export async function promisePool<T>(promises: (() => Promise<T>)[], poolSize = 8) {
-    const list = Array.from<T | string>({ length: promises.length }).fill(null);
+export async function promiseAllPool<T>(promises: (() => Promise<T>)[], poolSize = 8) {
+    const list = Array.from<T>({ length: promises.length }).fill(null);
     const executing = new Set();
     let excuted = 0;
     // let times = 0; // debug
@@ -35,4 +34,4 @@ export async function promisePool<T>(promises: (() => Promise<T>)[], poolSize = 
     return list;
 }
 
-export default promisePool
+export default promiseAllPool;

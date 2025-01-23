@@ -13,23 +13,25 @@
         // "tsBuildInfoFile": ".tsbuildinfo",
         "importHelpers": true,
         "isolatedModules": true,
+        "noEmit": false,
+        // "emitDeclarationOnly": true,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
+        "declaration": true,
         "skipLibCheck": true,
         "allowSyntheticDefaultImports": true,
         "allowJs": true,
         "checkJs": true,
         "noImplicitAny": false,
-        "noEmit": true,
         "noUnusedLocals": true,
         "sourceMap": false,
         "removeComments": true,
         "forceConsistentCasingInFileNames": true,
         // "preserveSymlinks": true,
-        "baseUrl": "./",
-        "rootDir": "./",
-        "paths": {
-        },
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "baseUrl": ".",
+        "paths": {},
         "types": ["node"],
         "lib": [
             "ESNext",
@@ -38,6 +40,6 @@
             "ScriptHost"
         ]
     },
-    "include": [],
+    "include": ["./src"],
     "exclude": ["node_modules", "dist", "./tmp", "./logs"]
 }

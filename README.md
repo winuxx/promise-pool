@@ -1,21 +1,22 @@
 # Description
 
-A tool to run promises concurrently like Promise.all but has pool limit
+A tool to run promises concurrently just like Promise.all and has an additional pool limit
 
 # How to use
 
 ```
-import { promisePool } from 'promise-pool/src'
+import { promiseAllPool } from 'promise-all-pool'
 
 async function main() {
-    const promises = [Promise func1, Promise func2, ...]
+    const promises = [Promise function 1, Promise function 2, ...]
     const result = await promisePool(promises, 8)
 }
 ```
 
-# Test the function
+# Test and Build
 
 ```
 pnpm install
 pnpm test
+pnpm build
 ```
